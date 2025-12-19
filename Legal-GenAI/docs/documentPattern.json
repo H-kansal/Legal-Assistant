@@ -1,0 +1,218 @@
+[
+    {
+        "id": "employment_contract_v1",
+        "content": "An Employment Contract is a legal agreement entered into between an employer and an employee. It defines the terms and conditions of employment including appointment, designation, job responsibilities, salary or remuneration, probation period, place of work, code of conduct, confidentiality obligations, non-compete restrictions, termination conditions, and notice period. This document governs the professional relationship between the employer and the employee.",
+        "metadata": {
+            "document_type": "Employment Contract",
+            "category": "Employment & HR",
+            "jurisdiction": "India"
+        }
+    },
+    {
+        "id": "offer_letter_v1",
+        "content": "An Offer Letter is a formal document issued by an employer to a candidate offering employment. It specifies key details such as job role, compensation or CTC, proposed joining date, and conditions like background verification. The letter requires acceptance by the candidate and is issued prior to the execution of a full employment contract.",
+        "metadata": {
+            "document_type": "Offer Letter",
+            "category": "Employment & HR",
+            "jurisdiction": "India"
+        }
+    },
+    {
+        "id": "experience_relieving_letter_v1",
+        "content": "An Experience or Relieving Letter is issued by an employer confirming that an employee has worked with the organization for a specific period and has been relieved from services. It mentions the employment duration, last working day, and often includes a goodwill statement wishing success in future endeavors. This document serves as proof of past employment.",
+        "metadata": {
+            "document_type": "Experience / Relieving Letter",
+            "category": "Employment & HR",
+            "jurisdiction": "India"
+        }
+    },
+    {
+    "id": "rental_lease_agreement_v1",
+    "content": "A Rental or Lease Agreement is a legal document between a landlord and a tenant governing the use of residential or commercial premises. It specifies the lease duration, rent amount, security deposit, maintenance charges, lock-in period, possession of premises, and rights and obligations of both parties.",
+    "metadata": {
+        "document_type": "Rental / Lease Agreement",
+        "category": "Property & Real Estate",
+        "jurisdiction": "India"
+    }
+    },
+    {
+    "id": "sale_deed_v1",
+    "content": "A Sale Deed is a registered legal document through which ownership of immovable property is transferred from the vendor to the vendee. It records the sale consideration, conveyance of ownership, absolute ownership rights, and includes a detailed schedule of the property. Registration of the sale deed is mandatory under Indian law.",
+    "metadata": {
+        "document_type": "Sale Deed",
+        "category": "Property & Real Estate",
+        "jurisdiction": "India"
+    }
+    },
+    {
+    "id": "agreement_to_sell_v1",
+    "content": "An Agreement to Sell is a preliminary legal agreement between a buyer and a seller outlining the terms under which a property will be sold in the future. It mentions earnest money, total sale consideration, balance payment, execution of the final sale deed, and conditions related to possession of the property.",
+    "metadata": {
+        "document_type": "Agreement to Sell",
+        "category": "Property & Real Estate",
+        "jurisdiction": "India"
+    }
+    },
+    {
+    "id": "fir_criminal_complaint_v1",
+    "content": "A First Information Report (FIR) or Criminal Complaint is a document recorded by the police upon receiving information about the commission of a cognizable offence. It includes details of the complainant, accused, police station, date and time of occurrence, nature of the offence, and sections of IPC or other criminal laws invoked under the CrPC.",
+    "metadata": {
+        "document_type": "FIR / Criminal Complaint",
+        "category": "Criminal Law",
+        "jurisdiction": "India"
+    }
+    },
+    {
+    "id": "charge_sheet_v1",
+    "content": "A Charge Sheet is a formal police report filed after completion of criminal investigation. It contains details of the accused persons, evidence collected, findings of the investigation, and is submitted to the court under Section 173 of the Criminal Procedure Code (CrPC). It forms the basis for trial proceedings.",
+    "metadata": {
+        "document_type": "Charge Sheet",
+        "category": "Criminal Law",
+        "jurisdiction": "India"
+    }
+    },
+    {
+    "id": "bail_application_v1",
+    "content": "A Bail Application is a legal application filed before a court seeking the release of an accused person from custody. It states that the applicant is in custody, has no likelihood of absconding, undertakes to cooperate with the investigation or trial, and requests release on bail pending proceedings.",
+    "metadata": {
+        "document_type": "Bail Application",
+        "category": "Criminal Law",
+        "jurisdiction": "India"
+    }
+    },
+    {
+    "id": "plaint_civil_suit_v1",
+    "content": "A Plaint is the initial pleading filed by a plaintiff to institute a civil suit in a court. It sets out the cause of action, jurisdiction of the court, details of the plaintiff and defendant, facts of the case, and the relief sought such as recovery, injunction, or damages.",
+    "metadata": {
+        "document_type": "Plaint / Civil Suit",
+        "category": "Civil Litigation",
+        "jurisdiction": "India"
+    }
+    },
+{
+  "id": "written_statement_v1",
+  "content": "A Written Statement is a formal pleading filed by the defendant in response to a civil suit. It contains preliminary objections, denials of allegations made in the plaint, replies on merits, and the defendant’s version of facts. This document forms the basis of the defendant’s defense in civil litigation.",
+  "metadata": {
+    "document_type": "Written Statement",
+    "category": "Civil Litigation",
+    "jurisdiction": "India"
+  }
+},
+{
+  "id": "affidavit_v1",
+  "content": "An Affidavit is a sworn written statement of facts made by a deponent under oath or affirmation. It typically includes statements such as solemn affirmation, verification of facts as true to the knowledge of the deponent, and is verified at a specific place and date. Affidavits are used as evidence in judicial and legal proceedings.",
+  "metadata": {
+    "document_type": "Affidavit",
+    "category": "Judicial Documents",
+    "jurisdiction": "India"
+  }
+},
+{
+  "id": "mou_v1",
+  "content": "A Memorandum of Understanding (MoU) is a non-binding legal document that records the mutual understanding and intent of parties intending to collaborate or enter into a future agreement. It outlines proposed terms, scope of collaboration, responsibilities of parties, and the intent without creating enforceable legal obligations.",
+  "metadata": {
+    "document_type": "Memorandum of Understanding (MoU)",
+    "category": "Corporate & Commercial",
+    "jurisdiction": "India"
+  }
+},
+{
+  "id": "shareholders_agreement_v1",
+  "content": "A Shareholders Agreement is a binding contract between shareholders of a company that governs ownership and management of equity shares. It defines voting rights, board of directors’ powers, transfer of shares, exit clauses, minority protection rights, and decision-making mechanisms within the company.",
+  "metadata": {
+    "document_type": "Shareholders Agreement",
+    "category": "Corporate & Commercial",
+    "jurisdiction": "India"
+  }
+},
+{
+  "id": "partnership_deed_v1",
+  "content": "A Partnership Deed is a legal agreement between partners of a partnership firm. It specifies capital contributions, profit and loss sharing ratios, rights and duties of partners, management of the firm, retirement or admission of partners, and dissolution terms governing the partnership operations.",
+  "metadata": {
+    "document_type": "Partnership Deed",
+    "category": "Corporate & Commercial",
+    "jurisdiction": "India"
+  }
+},
+{
+  "id": "legal_notice_v1",
+  "content": "A Legal Notice is a formal written communication sent by an advocate on behalf of a client, usually before initiating legal proceedings. It demands compliance, performance, payment, or cessation of an act and warns that legal action shall be initiated if the recipient fails to comply within the specified time.",
+  "metadata": {
+    "document_type": "Legal Notice",
+    "category": "Legal Communication",
+    "jurisdiction": "India"
+  }
+},
+{
+  "id": "reply_legal_notice_v1",
+  "content": "A Reply to Legal Notice is a formal response sent to a legal notice. It typically denies or disputes the allegations, states that the claims are false or frivolous, asserts absence of cause of action, and presents the sender’s legal position in response to the notice received.",
+  "metadata": {
+    "document_type": "Reply to Legal Notice",
+    "category": "Legal Communication",
+    "jurisdiction": "India"
+  }
+},
+{
+  "id": "consumer_complaint_v1",
+  "content": "A Consumer Complaint is a legal complaint filed by a consumer before a consumer forum alleging deficiency in service or unfair trade practices. It seeks relief such as refund, replacement, compensation, or corrective action under the Consumer Protection Act.",
+  "metadata": {
+    "document_type": "Consumer Complaint",
+    "category": "Consumer Law",
+    "jurisdiction": "India"
+  }
+},
+{
+  "id": "loan_agreement_v1",
+  "content": "A Loan Agreement is a binding contract between a lender and a borrower that governs the lending of money. It specifies the principal amount, interest rate, repayment schedule, tenure, default conditions, and rights and obligations of both parties in case of non-payment.",
+  "metadata": {
+    "document_type": "Loan Agreement",
+    "category": "Banking & Finance",
+    "jurisdiction": "India"
+  }
+},
+{
+  "id": "cheque_bounce_notice_v1",
+  "content": "A Cheque Bounce Notice is a statutory legal notice issued to the drawer of a cheque that has been dishonoured due to insufficient funds or other reasons. It refers to the cheque bearing number, dishonour memo, and invokes Section 138 of the Negotiable Instruments Act demanding payment within the prescribed time.",
+  "metadata": {
+    "document_type": "Cheque Bounce Notice",
+    "category": "Banking & Finance",
+    "jurisdiction": "India"
+  }
+},
+{
+  "id": "divorce_petition_v1",
+  "content": "A Divorce Petition is a legal petition filed before a family court seeking dissolution of marriage. It is filed by a husband or wife on grounds such as cruelty, desertion, or irretrievable breakdown of marriage, and contains details of marriage, disputes, and reliefs sought.",
+  "metadata": {
+    "document_type": "Divorce Petition",
+    "category": "Family Law",
+    "jurisdiction": "India"
+  }
+},
+{
+  "id": "maintenance_application_v1",
+  "content": "A Maintenance Application is a legal application filed under Section 125 of the Criminal Procedure Code seeking financial support. It is filed by a spouse or dependent who is unable to maintain themselves and seeks a monthly allowance for sustenance.",
+  "metadata": {
+    "document_type": "Maintenance Application",
+    "category": "Family Law",
+    "jurisdiction": "India"
+  }
+},
+{
+  "id": "terms_conditions_v1",
+  "content": "Terms and Conditions are standard contractual clauses governing the use of a service, product, or platform. They define user obligations, limitation of liability, governing law, dispute resolution mechanisms, and conditions under which services are provided.",
+  "metadata": {
+    "document_type": "Terms and Conditions",
+    "category": "Commercial Contracts",
+    "jurisdiction": "India"
+  }
+},
+{
+  "id": "privacy_policy_v1",
+  "content": "A Privacy Policy is a legal document that explains how personal data is collected, processed, stored, and shared by an organization. It covers data protection practices, use of cookies, user rights, and compliance with applicable data protection laws.",
+  "metadata": {
+    "document_type": "Privacy Policy",
+    "category": "Data Protection & Compliance",
+    "jurisdiction": "India"
+  }
+}
+]
