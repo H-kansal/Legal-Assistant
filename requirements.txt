@@ -16,3 +16,4 @@ python-docx
 fastapi
 unicorn
 python-multipart
+pygraphviz
