@@ -1,6 +1,7 @@
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
+from langsmith import traceable
 import os
 
 load_dotenv()
@@ -25,8 +26,8 @@ Focus only on:
 
 Return ONLY bullet points.So that document pattern can be easily identified.
 """
-
-def textSummary(text:str)->str:
+@traceable(name="Text Summary Node")
+def textSummary(text:str)->str:    
     llm=ChatGroq(api_key=groq_api_key,model="openai/gpt-oss-20b",temperature=0)
     prompt=ChatPromptTemplate.from_messages([
         ("system", promptTemplate),

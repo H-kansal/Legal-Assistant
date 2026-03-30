@@ -10,6 +10,7 @@ from nodeFunctions.crpcNode import crpcDocsRetriever
 from nodeFunctions.indianEvidenceActNode import indianEvidenceActDocsRetriever
 from nodeFunctions.itActNode import itActDocsRetriever
 from structureClass import RiskAnalysisOutput
+from langsmith import traceable
 import os
 load_dotenv()
 
@@ -47,7 +48,7 @@ you have to also analysis the risk level(e.g., low, medium, high).
 Base your analysis ONLY on the supplied legal materials.
 If the materials are insufficient, explicitly state that limitation.
 """
-
+@traceable(name="Risk Analysis Node")
 def riskAnalysisNode(state:DocuementAgentState)->DocuementAgentState:
     queries=state.get("enriched_questions",[])
     if not queries:

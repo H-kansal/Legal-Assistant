@@ -4,6 +4,7 @@ from retrievers.documentPatternRetriever import get_retriever
 from dotenv import load_dotenv
 from stateAgent import DocuementAgentState
 from structureClass import DocumentPatternOutput
+from langsmith import traceable
 import os
 
 load_dotenv()
@@ -26,7 +27,7 @@ Follow these rules strictly:
 - If the document does not clearly match a known type, choose "Other".
 """
 
-
+@traceable(name="Document Pattern Node")
 def documentPatternNode(state: DocuementAgentState) -> DocuementAgentState:
     retriever = get_retriever()
     all_retrieved_docs=retriever.invoke(state["document_summary"])

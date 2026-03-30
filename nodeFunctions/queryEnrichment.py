@@ -2,6 +2,7 @@ from langchain_groq import ChatGroq
 from langchain_core.prompts import PromptTemplate,FewShotPromptTemplate
 from dotenv import load_dotenv
 from stateAgent import DocuementAgentState
+from langsmith import traceable
 import os
 
 load_dotenv()
@@ -77,6 +78,8 @@ STRICT RULES:
 
 The output must be suitable for downstream legal research and retrieval.
 """
+
+@traceable(name="Query Enrichment Node")
 def queryEnrichmentNode(state:DocuementAgentState)->DocuementAgentState:
     llm=ChatGroq(api_key=groq_api_key,model="openai/gpt-oss-120b",temperature=0)
 

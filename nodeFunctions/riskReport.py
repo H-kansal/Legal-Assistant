@@ -3,6 +3,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
 from stateAgent import DocuementAgentState
 from structureClass import FinalAnswer
+from langsmith import traceable
 import os
 
 load_dotenv()
@@ -39,7 +40,7 @@ Base your explanation strictly on the provided issue analysis
 Maintain a neutral, explanatory, risk-focused tone
 Your role is to explain and contextualize legal risk for each issue individually, not to resolve it or assess the document as a whole.
     """
-
+@traceable(name="Risk Report Node")
 def riskReportNode(state:DocuementAgentState)-> DocuementAgentState:
 
     llm=ChatGroq(api_key=groq_api_key,model="openai/gpt-oss-120b",temperature=0)

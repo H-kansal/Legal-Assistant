@@ -3,11 +3,12 @@ from stateAgent import AgentState
 from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate
 from structureClass import FinalAnswerOutput
+from langsmith import traceable
 import os
 load_dotenv()
 
 groq_api_key=os.getenv("GROQ_API_KEY")
-
+@traceable(name="Final Answer Node")
 def get_final_answer(state: AgentState)-> AgentState:
     if not state["retrieved_docs"]:
         return {

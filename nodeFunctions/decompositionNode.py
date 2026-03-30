@@ -4,10 +4,14 @@ from dotenv import load_dotenv
 from structureClass import DecompositionOutput
 from typing import List
 from langchain_core.prompts import ChatPromptTemplate
+from langsmith import traceable
+
 import os
 load_dotenv()
 groq_api_key=os.getenv("GROQ_API_KEY")
 
+
+@traceable(name="decompositionNode")
 def decompose_query(query):
     llm=ChatGroq(groq_api_key=groq_api_key,model="openai/gpt-oss-120b", temperature=0)
     structed_llm=llm.with_structured_output(DecompositionOutput)

@@ -101,6 +101,9 @@ jobs:
           --name rag-genai \
           -e GROQ_API_KEY=${{ secrets.GROQ_API_KEY }} \
           -e HF_TOKEN=${{ secrets.HF_TOKEN }} \
+          -e LANGCHAIN_API_KEY=${{ secrets.LANGCHAIN_API_KEY }} \
+          -e LANGCHAIN_TRACING_V2=${{ secrets.LANGCHAIN_TRACING_V2 }} \
+          -e LANGCHAIN_PROJECT=${{ secrets.LANGCHAIN_PROJECT }} \
           -v chroma_data:/app/db \
           ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
 

@@ -3,6 +3,8 @@ from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
 from stateAgent import AgentState
 from retrievers.BscRetriever import get_retriever
+from langsmith import traceable
+
 import os
 load_dotenv()
 

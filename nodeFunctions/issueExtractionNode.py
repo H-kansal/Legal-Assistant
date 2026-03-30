@@ -1,5 +1,6 @@
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
+from langsmith import traceable
 from dotenv import load_dotenv
 from stateAgent import DocuementAgentState
 from structureClass import IssueOutput
@@ -27,7 +28,7 @@ Follow these rules strictly:
 - Be neutral and descriptive.
 
 """
-
+@traceable(name="Issue Extraction Node")
 def issueExtractionNode(state:DocuementAgentState)->DocuementAgentState:
     llm=ChatGroq(api_key=groq_api_key,model="openai/gpt-oss-120b",temperature=0)
     structed_llm=llm.with_structured_output(IssueExtractionOutput)

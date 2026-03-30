@@ -1,5 +1,13 @@
 from langgraph.graph import START,END,StateGraph
 from stateAgent import AgentState
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+LANGCHAIN_API_KEY=os.getenv("LANGCHAIN_API_KEY")
+LANGCHAIN_TRACING_V2=os.getenv("LANGCHAIN_TRACING_V2")
+LANGCHAIN_PROJECT=os.getenv("LANGCHAIN_PROJECT")
+
 
 from nodeFunctions.decompositionNode import decompositionNode
 from nodeFunctions.bnsNode import bnsNode
