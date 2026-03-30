@@ -97,6 +97,7 @@ jobs:
       - name: Run New Container
         run: |
           docker run -d -p 80:8000 \
+          --restart always \
           --name rag-genai \
           -e GROQ_API_KEY=${{ secrets.GROQ_API_KEY }} \
           -e HF_TOKEN=${{ secrets.HF_TOKEN }} \
