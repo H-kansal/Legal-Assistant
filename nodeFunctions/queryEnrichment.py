@@ -5,7 +5,7 @@ from stateAgent import DocuementAgentState
 from langsmith import traceable
 import os
 
-load_dotenv()
+from utils.llm import getLLM
 
 groq_api_key=os.getenv("GROQ_API_KEY")
 
@@ -73,7 +73,7 @@ STRICT RULES:
 • Keep the question generic and jurisdiction-neutral within India
 • Use formal legal language
 • Ensure the question is self-contained and understandable without context
-• Output ONLY a single question as plain text
+• Output ONLY a single question in json format
 • Do NOT include explanations, bullet points, or formatting
 
 The output must be suitable for downstream legal research and retrieval.
@@ -81,7 +81,7 @@ The output must be suitable for downstream legal research and retrieval.
 
 @traceable(name="Query Enrichment Node")
 def queryEnrichmentNode(state:DocuementAgentState)->DocuementAgentState:
-    llm=ChatGroq(api_key=groq_api_key,model="openai/gpt-oss-120b",temperature=0)
+    llm=getLLM()
 
     prompt=FewShotPromptTemplate(
         examples=example_inputs,

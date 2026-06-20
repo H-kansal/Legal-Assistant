@@ -17,8 +17,8 @@ def run_legal_graph(question):
     
     if not final_state or "final_answer" not in final_state:
         raise RuntimeError("Graph did not produce a final answer")
-    # print("Final Answer:", final_state)
-    return final_state["final_answer"]
+    print("Final Answer:", final_state["final_answer"])
+    return final_state
 
 def docs_graph_runner(fileName):
     initial_state={
@@ -34,7 +34,7 @@ def docs_graph_runner(fileName):
     
     if not final_state or "risk_report" not in final_state:
         raise RuntimeError("Graph did not produce a final answer")
-    # print("Final Answer:", final_state)
-    return final_state["risk_report"]
+    print("Final Answer:", final_state["risk_report"])
+    return final_state
 
 

@@ -6,7 +6,7 @@ from structureClass import FinalAnswer
 from langsmith import traceable
 import os
 
-load_dotenv()
+from utils.llm import getLLM
 groq_api_key=os.getenv("GROQ_API_KEY")
 
 promptTemplate="""
@@ -34,6 +34,7 @@ Do NOT give legal advice or recommendations
 Do NOT suggest corrective or preventive actions
 Do NOT introduce new facts, assumptions, or external information
 Do NOT merge or compare issues with each other
+Always respond in valid JSON format.
 
 Base your explanation strictly on the provided issue analysis
 
@@ -43,7 +44,7 @@ Your role is to explain and contextualize legal risk for each issue individually
 @traceable(name="Risk Report Node")
 def riskReportNode(state:DocuementAgentState)-> DocuementAgentState:
 
-    llm=ChatGroq(api_key=groq_api_key,model="openai/gpt-oss-120b",temperature=0)
+    llm=getLLM()
     structed_llm=llm.with_structured_output(FinalAnswer)
     prompt=ChatPromptTemplate.from_messages([
         ("system", promptTemplate),

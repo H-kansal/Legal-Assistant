@@ -1,0 +1,38 @@
+model_list:
+  - model_name: groq-openai        # your internal name
+    litellm_params:
+      model: groq/openai/gpt-oss-120b
+      api_key: os.environ/GROQ_API_KEY_1
+
+  - model_name: groq-openai       # same name = load balanced automatically
+    litellm_params:
+      model: groq/openai/gpt-oss-120b
+      api_key: os.environ/GROQ_API_KEY_2
+
+  - model_name: groq-openai         # add as many keys as you have
+    litellm_params:
+      model: groq/openai/gpt-oss-20b
+      api_key: os.environ/GROQ_API_KEY_3
+    
+  - model_name: groq-openai       # add as many keys as you have
+    litellm_params:
+      model: groq/openai/gpt-oss-20b
+      api_key: os.environ/GROQ_API_KEY_4
+
+  - model_name: groq-openai       # add as many keys as you have
+    litellm_params:
+      model: groq/llama-3.3-70b-versatile
+      api_key: os.environ/GROQ_API_KEY_5
+
+  - model_name: groq-openai       # add as many keys as you have
+    litellm_params:
+      model: groq/llama-3.3-70b-versatile
+      api_key: os.environ/GROQ_API_KEY_6
+
+router_settings:
+  routing_strategy: least-busy    # options: least-busy | round-robin | latency-based
+  num_retries: 3                  # retry on rate limit
+  retry_after: 5                  # wait 5s before retry
+  allowed_fails: 2                # mark key as unhealthy after 2 fails
+  cooldown_time: 30               # unhealthy key rests for 30s
+

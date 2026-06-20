@@ -93,7 +93,7 @@ jobs:
         run: |
           docker stop rag-genai || true
           docker rm rag-genai || true
-
+          
       - name: Run New Container
         run: |
           docker run -d -p 80:8000 \
@@ -104,6 +104,8 @@ jobs:
           -e LANGCHAIN_API_KEY=${{ secrets.LANGCHAIN_API_KEY }} \
           -e LANGCHAIN_TRACING_V2=${{ secrets.LANGCHAIN_TRACING_V2 }} \
           -e LANGCHAIN_PROJECT=${{ secrets.LANGCHAIN_PROJECT }} \
+          -e LANGSMITH_API_KEY=${{ secrets.LANGSMITH_API_KEY }} \
+          -e LITELLM_URI=${{ secrets.LITELLM_URI }} \
           -v chroma_data:/app/db \
           ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
 

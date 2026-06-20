@@ -16,3 +16,8 @@ fastapi
 uvicorn
 python-multipart
 pygraphviz
+litellm
+litellm[proxy]
+langchain_openai
+pymupdf
+langsmith

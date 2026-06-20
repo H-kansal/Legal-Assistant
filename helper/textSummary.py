@@ -2,11 +2,10 @@ from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
 from langsmith import traceable
+from utils.llm import getLLM
 import os
 
-load_dotenv()
 
-groq_api_key=os.getenv("GROQ_API_KEY")
 
 promptTemplate="""
 You are a legal document summarization assistant for Indian legal documents.
@@ -24,11 +23,12 @@ Focus only on:
 - rights
 - penalties or consequences (if any)
 
-Return ONLY bullet points.So that document pattern can be easily identified.
+Return ONLY bullet points in json format.So that document pattern can be easily identified.
 """
 @traceable(name="Text Summary Node")
 def textSummary(text:str)->str:    
-    llm=ChatGroq(api_key=groq_api_key,model="openai/gpt-oss-20b",temperature=0)
+
+    llm=getLLM()
     prompt=ChatPromptTemplate.from_messages([
         ("system", promptTemplate),
         ("user","Summarize the following legal document:\n{text}")

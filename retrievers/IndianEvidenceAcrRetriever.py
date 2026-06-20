@@ -4,9 +4,10 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 from dotenv import load_dotenv
 import os
+
 load_dotenv()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-file_path = os.path.join(BASE_DIR, "docs", "indian_evidence_act.pdf")
+file_path = os.path.join(BASE_DIR, "docs", "indian evidence act.pdf")
 CHROMA_PATH=os.path.join(BASE_DIR,  "db" ,"iae_db")
 
 def load_documents():

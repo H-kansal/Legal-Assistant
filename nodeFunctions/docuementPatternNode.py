@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from stateAgent import DocuementAgentState
 from structureClass import DocumentPatternOutput
 from langsmith import traceable
+from utils.llm import getLLM
 import os
 
 load_dotenv()
@@ -31,7 +32,7 @@ Follow these rules strictly:
 def documentPatternNode(state: DocuementAgentState) -> DocuementAgentState:
     retriever = get_retriever()
     all_retrieved_docs=retriever.invoke(state["document_summary"])
-    llm=ChatGroq(api_key=groq_api_key, model="openai/gpt-oss-120b", temperature=0)
+    llm=getLLM()
     structed_llm=llm.with_structured_output(DocumentPatternOutput)
 
     prompt=ChatPromptTemplate.from_messages([

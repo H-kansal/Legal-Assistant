@@ -8,7 +8,7 @@ from pydantic import BaseModel
 from typing import List
 import os
 
-load_dotenv()
+from utils.llm import getLLM
 
 class IssueExtractionOutput(BaseModel):
     issues: List[IssueOutput]
@@ -30,7 +30,7 @@ Follow these rules strictly:
 """
 @traceable(name="Issue Extraction Node")
 def issueExtractionNode(state:DocuementAgentState)->DocuementAgentState:
-    llm=ChatGroq(api_key=groq_api_key,model="openai/gpt-oss-120b",temperature=0)
+    llm=getLLM()
     structed_llm=llm.with_structured_output(IssueExtractionOutput)
 
     pronpt=ChatPromptTemplate.from_messages([

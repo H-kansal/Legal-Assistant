@@ -12,7 +12,7 @@ from nodeFunctions.itActNode import itActDocsRetriever
 from structureClass import RiskAnalysisOutput
 from langsmith import traceable
 import os
-load_dotenv()
+from utils.llm import getLLM
 
 groq_api_key=os.getenv("GROQ_API_KEY")
 
@@ -47,13 +47,14 @@ not to resolve the issue or give an opinion.
 you have to also analysis the risk level(e.g., low, medium, high).
 Base your analysis ONLY on the supplied legal materials.
 If the materials are insufficient, explicitly state that limitation.
+- Always respond in valid JSON format.
 """
 @traceable(name="Risk Analysis Node")
 def riskAnalysisNode(state:DocuementAgentState)->DocuementAgentState:
     queries=state.get("enriched_questions",[])
     if not queries:
         return {"risk_analysis_results":[]}
-    llm=ChatGroq(api_key=groq_api_key,model="openai/gpt-oss-120b",temperature=0)
+    llm=getLLM()
     structed_llm=llm.with_structured_output(RiskAnalysisOutput)
     prompt=ChatPromptTemplate.from_messages([
         ("system", promptTemplate),
