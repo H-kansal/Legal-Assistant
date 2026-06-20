@@ -117,6 +117,49 @@ It shows how different nodes interact to process user queries and perform docume
 - **Final Answer Node** – Generates the final structured response
 
 
+## 🔀 LiteLLM Proxy (Rate Limiting & Fallbacks)
+
+To handle **LLM provider rate limits** and ensure **automatic fallbacks** between models/providers, the system uses a **LiteLLM Proxy** layer in front of all LLM calls.
+
+- Acts as a unified gateway for all model requests, decoupling the application from any single provider.
+- Handles **rate limit management**, queuing/throttling requests to avoid hitting provider-side limits.
+- Provides **automatic fallback** to alternate models/providers if a request fails or a provider is rate-limited.
+- Configured via a single YAML file (`config/llmConfig.yaml`), making it easy to add, remove, or reorder models and fallback chains.
+
+**Running locally:**
+
+```bash
+litellm --config config/llmConfig.yaml --port 4000
+```
+
+This starts the proxy on `http://localhost:4000`, and the application points its LLM calls at this local endpoint instead of calling provider APIs directly.
+
+---
+
+## 📊 RAG Evaluation
+
+The RAG pipeline is evaluated using **LangSmith's evaluation framework**, testing the system across multiple quality dimensions to measure both **answer quality** and **retrieval quality**.
+
+**Metrics used:**
+
+- **Correctness** – Measures how factually accurate the generated answer is with respect to the reference/ground truth.
+- **Groundedness** – Measures whether the generated answer is properly supported by the retrieved context (i.e., free of hallucination).
+- **Relevance** – Measures how relevant the generated answer is to the user's query.
+- **Retrieval Relevance** – Measures how relevant the retrieved documents are to the user's query.
+
+**Results:**
+
+| Metric | Score |
+|---|---|
+| Correctness | 0.18 |
+| Groundedness | 0.65 |
+| Relevance | 0.52 |
+| Retrieval Relevance | 0.6 |
+
+> 📌 These scores highlight that while retrieval and groundedness are reasonably solid, **correctness** is currently the weakest dimension and is an active area of improvement for the pipeline.
+
+---
+
 ## 👨‍💻 Credits
 
 **Himanshu Kansal**  
@@ -129,4 +172,3 @@ Architected and implemented an end-to-end Legal AI Assistant featuring:
 - Interactive Streamlit interface  
 
 ---
-
